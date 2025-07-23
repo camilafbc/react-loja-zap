@@ -4,6 +4,7 @@ import { Product } from "@/types/Product";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { ToastAction } from "../ui/toast";
+import { useCartSore } from "@/stores/cart-store";
 
 interface Props {
   item: Product;
@@ -11,8 +12,10 @@ interface Props {
 
 export const ProductItem = ({ item }: Props) => {
   const { toast } = useToast();
+  const { upsertCartItem } = useCartSore((state) => state);
+
   const handleAddButton = () => {
-    // TODO: Adicionar item ao storage
+    upsertCartItem(item, 1);
     toast({
       title: "Adicionado ao carrinho!",
       description: item.name,
