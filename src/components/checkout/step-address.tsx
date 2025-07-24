@@ -21,6 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const formSchema = z.object({
   street: z.string().min(2, "Preencha o endereço"),
@@ -143,11 +144,19 @@ export const StepAddress = ({ setStep }: Props) => {
             )}
           />
         </div>
-        <div className="flex justify-between mt-4 ">
-          <Button type="submit" variant="link" onClick={() => setStep("user")}>
+        <div className="flex justify-between mt-8 ">
+          <Button
+            type="submit"
+            variant="outline"
+            onClick={() => setStep("user")}
+          >
+            <ChevronLeft className="size-5 mr-1" />
             Voltar
           </Button>
-          <Button type="submit">Próximo</Button>
+          <Button type="submit">
+            Próximo
+            <ChevronRight className="size-5 ml-1" />
+          </Button>
         </div>
       </form>
     </Form>

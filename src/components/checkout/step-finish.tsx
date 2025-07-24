@@ -2,6 +2,7 @@ import { UseCheckoutStore } from "@/stores/checkout-store";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { generateMessage } from "@/lib/generate-message";
+import { CheckCheck } from "lucide-react";
 
 export const StepFinish = () => {
   const { name } = UseCheckoutStore((state) => state);
@@ -22,6 +23,7 @@ export const StepFinish = () => {
       </p>
       <Button asChild>
         <Link target="_blank" href={linkZap}>
+          <CheckCheck className="size-5 mr-1" />
           Enviar para o WhatsApp
         </Link>
       </Button>

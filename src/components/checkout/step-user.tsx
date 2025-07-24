@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { ChevronRight } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Preencha seu nome"),
@@ -55,8 +56,9 @@ export const StepUser = ({ setStep }: Props) => {
             </FormItem>
           )}
         />
-        <Button type="submit" variant="outline">
+        <Button type="submit" variant="outline" className="mt-4">
           Próximo
+          <ChevronRight className="size-5 ml-1" />
         </Button>
       </form>
     </Form>
