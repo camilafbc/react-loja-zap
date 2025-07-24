@@ -17,6 +17,7 @@ export const ProductItem = ({ item }: Props) => {
   const handleAddButton = () => {
     upsertCartItem(item, 1);
     toast({
+      variant: "success",
       title: "Adicionado ao carrinho!",
       description: item.name,
       action: <ToastAction altText="fechar">Fechar</ToastAction>,
