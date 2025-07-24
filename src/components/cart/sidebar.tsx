@@ -12,8 +12,11 @@ import { RocketIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { useCartSore } from "@/stores/cart-store";
 import { CartItem } from "./item";
+import { useState } from "react";
+import { CheckoutDialog } from "../checkout/dialog";
 
 export const CartSidebar = () => {
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
   const { cart } = useCartSore((state) => state);
 
   let subtotal = 0;
@@ -53,8 +56,15 @@ export const CartSidebar = () => {
         <Separator className="my-4" />
 
         <div className="text-center">
-          <Button disabled={cart.length === 0}>Finalizar Compra</Button>
+          <Button
+            onClick={() => setCheckoutOpen(true)}
+            disabled={cart.length === 0}
+          >
+            Finalizar Compra
+          </Button>
         </div>
+
+        <CheckoutDialog open={checkoutOpen} onOpenChange={setCheckoutOpen} />
       </SheetContent>
     </Sheet>
   );
