@@ -11,13 +11,12 @@ import { useState } from "react";
 import { StepUser } from "./step-user";
 import { StepAddress } from "./step-address";
 import { StepFinish } from "./step-finish";
+import { Step } from "@/types/checkout-steps";
 
 interface Props {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
-
-type Step = "user" | "address" | "finish";
 
 export const CheckoutDialog = ({ open, onOpenChange }: Props) => {
   const [step, setStep] = useState<Step>("user");
@@ -42,10 +41,13 @@ export const CheckoutDialog = ({ open, onOpenChange }: Props) => {
           <DialogTitle>
             {step === "user" && "Dados Pessoais"}
             {step === "address" && "Dados de Entrega"}
-            {step === "finish" && "ENvio para o Whatsapp"}
+            {step === "finish" && "Envio para o Whatsapp"}
           </DialogTitle>
         </DialogHeader>
-        <Progress value={progressPct} />
+        <Progress
+          value={progressPct}
+          className="bg-gradient-to-r from-yellow-300 to-green-700"
+        />
 
         <div className="flex flex-col gap-3">
           {step === "user" && <StepUser setStep={setStep} />}
