@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Cart } from "@/types/Cart";
 import { CartItemQuantity } from "./item-quantity";
 
@@ -11,6 +12,7 @@ export const CartItem = ({ item }: Props) => {
       <div className="w-16 overflow-hidden">
         <img
           src={item.product.image}
+          alt={item.product.name}
           className="w-full h-auto object-cover rounded-md"
         />
       </div>
