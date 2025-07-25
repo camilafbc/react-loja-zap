@@ -21,7 +21,7 @@ export const CartSidebar = () => {
 
   let subtotal = 0;
   for (const item of cart) {
-    subtotal = item.product.price * item.quantity;
+    subtotal += item.product.price * item.quantity;
   }
 
   return (
