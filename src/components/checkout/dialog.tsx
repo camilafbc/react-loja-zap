@@ -46,7 +46,7 @@ export const CheckoutDialog = ({ open, onOpenChange }: Props) => {
         </DialogHeader>
         <Progress
           value={progressPct}
-          className="bg-gradient-to-r from-yellow-300 to-green-700"
+          className="bg-gradient-to-r from-yellow-400 via-lime-400 to-green-600"
         />
 
         <div className="flex flex-col gap-3">
