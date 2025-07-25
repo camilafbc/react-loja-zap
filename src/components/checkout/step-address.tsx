@@ -73,7 +73,7 @@ export const StepAddress = ({ setStep }: Props) => {
               <FormItem>
                 <FormLabel>Nº</FormLabel>
                 <FormControl>
-                  <Input autoFocus {...field} />
+                  <Input {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -86,7 +86,7 @@ export const StepAddress = ({ setStep }: Props) => {
               <FormItem>
                 <FormLabel>Complemento</FormLabel>
                 <FormControl>
-                  <Input autoFocus {...field} />
+                  <Input {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -99,7 +99,7 @@ export const StepAddress = ({ setStep }: Props) => {
               <FormItem>
                 <FormLabel>Bairro</FormLabel>
                 <FormControl>
-                  <Input autoFocus {...field} />
+                  <Input {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -112,7 +112,7 @@ export const StepAddress = ({ setStep }: Props) => {
               <FormItem>
                 <FormLabel>Cidade</FormLabel>
                 <FormControl>
-                  <Input autoFocus {...field} />
+                  <Input {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
